@@ -1,0 +1,288 @@
+{
+  "prisms": {
+    "kestra": {
+      "name": "Kestra",
+      "colour": "Red",
+      "hex": "#c0392b",
+      "note": "Aggression. Run-fork: attack with her once -> Attacker; don't attack for two matches -> Withheld. Pick one, the other locks for the run. Effects stack; each node needs the one above it.",
+      "paths": [
+        {
+          "id": "attacker",
+          "name": "The Attacker",
+          "tagline": "in the fight",
+          "entry": "Attack with her once (instant, easy)",
+          "nodes": [
+            {
+              "id": "first_blood",
+              "name": "First blood",
+              "tier": "1",
+              "group": "Relentless",
+              "signal": "attacked at least once",
+              "ability": "+1 power",
+              "requires": ""
+            },
+            {
+              "id": "press",
+              "name": "Press the attack",
+              "tier": "2",
+              "group": "Relentless",
+              "signal": "attacked 3+ times in a match",
+              "ability": "-1 cost",
+              "requires": "first_blood"
+            },
+            {
+              "id": "never_hesitate",
+              "name": "Never hesitate",
+              "tier": "3",
+              "group": "Relentless",
+              "signal": "attacked every turn you were able",
+              "ability": "gains haste",
+              "requires": "press"
+            },
+            {
+              "id": "thrives",
+              "name": "Thrives on pain",
+              "tier": "1",
+              "group": "Bloodlust",
+              "signal": "took damage but survived the match",
+              "ability": "+1/+1 while below half life",
+              "requires": ""
+            },
+            {
+              "id": "last_stand",
+              "name": "Last stand",
+              "tier": "2",
+              "group": "Bloodlust",
+              "signal": "commander knocked out in a match",
+              "ability": "+2 power / -1 toughness (trade-off)",
+              "requires": "thrives"
+            },
+            {
+              "id": "the_split",
+              "name": "The split",
+              "tier": "capstone",
+              "group": "Bloodlust",
+              "signal": "knocked out three times across the run",
+              "ability": "Kestra splits in two (lore transformation)",
+              "requires": "last_stand"
+            }
+          ]
+        },
+        {
+          "id": "withheld",
+          "name": "The Withheld",
+          "tagline": "held back",
+          "entry": "Don't attack with her for two matches (earned)",
+          "nodes": [
+            {
+              "id": "untouchable",
+              "name": "Untouchable",
+              "tier": "1",
+              "group": "Arrogance",
+              "signal": "finished a match unwounded",
+              "ability": "gains first strike, but +1 cost",
+              "requires": ""
+            },
+            {
+              "id": "duelists_pride",
+              "name": "Duelist's pride",
+              "tier": "2",
+              "group": "Arrogance",
+              "signal": "won a match unwounded",
+              "ability": "enemies must block her if able (taunt)",
+              "requires": "untouchable"
+            },
+            {
+              "id": "sulk",
+              "name": "Sulk",
+              "tier": "1",
+              "group": "Spite",
+              "signal": "benched a whole match (never in combat)",
+              "ability": "next match she enters with a burst = turns she sat out",
+              "requires": ""
+            },
+            {
+              "id": "vengeance",
+              "name": "Vengeance",
+              "tier": "2",
+              "group": "Spite",
+              "signal": "benched two matches",
+              "ability": "when she finally swings, unblockable that turn",
+              "requires": "sulk"
+            }
+          ]
+        }
+      ]
+    },
+    "wylda": {
+      "name": "Wylda",
+      "colour": "Green",
+      "hex": "#6aa84f",
+      "note": "Patient grower. Wants you to LEAVE Light unspent ('for the trees') and survive damage without being knocked out. Offers creature discounts + scar-growth. Define her paths + nodes here.",
+      "paths": [
+        {
+          "id": "path_mqx44mfx310",
+          "name": "Natures Bounty",
+          "tagline": "in a fight",
+          "entry": "Leaving mana unspent, track the total amount of mana unspent between turns and this becomes a signal. ",
+          "nodes": [
+            {
+              "id": "node_mqx47c9h519",
+              "name": "Creek of light",
+              "tier": "1",
+              "group": "",
+              "signal": "Leave atleast 3 unspent mana in a signal match",
+              "ability": "When Green is on the field creatures cost 1 less to summon",
+              "requires": ""
+            },
+            {
+              "id": "node_mqx49fcp101",
+              "name": "Stream of light",
+              "tier": "2",
+              "group": "",
+              "signal": "Win a match without casting any spells",
+              "ability": "At the end of your turn, you can spend 3 unspent mana to give every creature +1/+1 (can be activated multiple times",
+              "requires": "node_mqx47c9h519"
+            },
+            {
+              "id": "node_mqx4bazt994",
+              "name": "River of Light",
+              "tier": "3",
+              "group": "",
+              "signal": "Win a match without spending any mana for 3 turns.",
+              "ability": "Creatures you control gain \"tap: gain one light\"",
+              "requires": "node_mqx49fcp101"
+            },
+            {
+              "id": "node_mqx4gx9o53",
+              "name": "Light Fall",
+              "tier": "capstone",
+              "group": "",
+              "signal": "Generate 30 mana in one match using river of light",
+              "ability": "Stream of light activated ability costs 1 mana",
+              "requires": ""
+            }
+          ]
+        },
+        {
+          "id": "path_mqx45rwg756",
+          "name": "Defender of the forest",
+          "tagline": "in a fight",
+          "entry": "Use cards to block, having them not die in the battle.",
+          "nodes": [
+            {
+              "id": "node_mqx4iyj2419",
+              "name": "Canopy",
+              "tier": "1",
+              "group": "",
+              "signal": "Use creatures to block and have none of die in a battle",
+              "ability": "Creatures get +0/+1",
+              "requires": ""
+            },
+            {
+              "id": "node_mqx4k1ti52",
+              "name": "Hard Bark",
+              "tier": "2",
+              "group": "",
+              "signal": "Do not take damage from a creature in a match",
+              "ability": "Creatures can block one additional creature.\nCanopy bonus increases to +0/+2",
+              "requires": "node_mqx4iyj2419"
+            },
+            {
+              "id": "node_mqx4oxrt73",
+              "name": "Branches",
+              "tier": "3",
+              "group": "",
+              "signal": "Do not take damage from a creature in a match (again)",
+              "ability": "When green is on the field, creatures gain reach",
+              "requires": "node_mqx4k1ti52"
+            },
+            {
+              "id": "node_mqx5zqov737",
+              "name": "Song of the forest",
+              "tier": "capstone",
+              "group": "",
+              "signal": "In a signal match block atleast 50 damage without losing a creature",
+              "ability": "When Green is on the field, creatures you control can block more than 1 creature and gain death touch.",
+              "requires": "node_mqx4oxrt73"
+            }
+          ]
+        }
+      ]
+    },
+    "liora": {
+      "name": "Liora",
+      "colour": "Blue",
+      "hex": "#4a78c8",
+      "note": "Foresight + control. TWO trees. THE PLANNER: spend Light perfectly (never strand Light you could have played) and win from hidden information / held 'plans' (e.g. removal kept in hand) -> spell-cost reductions, more spells per turn. THE GAMBLER: introduces coin-flip / dice randomness; beat the odds -> tilt luck in your favour (rerolls, choose the result). Many signals are secret.",
+      "paths": [
+        {
+          "id": "planner",
+          "name": "The Planner",
+          "tagline": "every turn, exactly",
+          "entry": "Plan perfectly — spend all your Light every turn (never strand Light you could have played), and win from your hand.",
+          "nodes": [
+            {"id": "clockwork", "name": "Clockwork", "tier": "1", "group": "Tempo", "signal": "ended a match having spent all your Light every single turn", "ability": "spells cost 1 less Light", "requires": "", "visibility": "hinted"},
+            {"id": "efficiency", "name": "Efficiency", "tier": "2", "group": "Tempo", "signal": "cast 2+ spells in a single turn, in a match you won", "ability": "the first spell you cast each turn costs 1 less", "requires": "clockwork", "visibility": "hinted"},
+            {"id": "inevitability", "name": "Inevitability", "tier": "capstone", "group": "Tempo", "signal": "won a match having cast 3+ spells in one turn", "ability": "once per turn, your cheapest spell in hand costs 0", "requires": "efficiency", "visibility": "secret"},
+            {"id": "held_plan", "name": "The held plan", "tier": "1", "group": "Foresight", "signal": "won a match while holding a creature-removal spell in hand the whole game (never cast it)", "ability": "you may hold one extra card past the hand limit, and you see the top card of your deck", "requires": "", "visibility": "secret"}
+          ]
+        },
+        {
+          "id": "gambler",
+          "name": "The Gambler",
+          "tagline": "beat the odds",
+          "entry": "Court chance — be in it whenever a coin is flipped or a die rolled. (This path introduces flips/rolls to the game.)",
+          "nodes": [
+            {"id": "beginners_luck", "name": "Beginner's luck", "tier": "1", "group": "Fortune", "signal": "won a match in which a coin flip or die roll went your way", "ability": "once per match, flip a coin — heads, draw a card", "requires": "", "visibility": "open"},
+            {"id": "loaded_dice", "name": "Loaded dice", "tier": "2", "group": "Fortune", "signal": "won 3 flips or rolls in a single match", "ability": "once per match, reroll one flip or roll that went against you", "requires": "beginners_luck", "visibility": "hinted"},
+            {"id": "house_edge", "name": "House edge", "tier": "3", "group": "Fortune", "signal": "won a match without a single flip or roll going against you", "ability": "once per turn, choose which side your coin lands on", "requires": "loaded_dice", "visibility": "secret"},
+            {"id": "fixed_game", "name": "Fixed game", "tier": "capstone", "group": "Fortune", "signal": "beat 1-in-4 odds (or worse) and won that match", "ability": "the first unfavourable roll each turn is automatically rerolled in your favour", "requires": "house_edge", "visibility": "secret"}
+          ]
+        }
+      ]
+    },
+    "aurelle": {
+      "name": "Aurelle",
+      "colour": "Gold",
+      "hex": "#d4af37",
+      "note": "Stasis, protection, the old empire — and ORDER. INVERTED FORK (like Red): RIGHT OF RULE (spend your subjects' lives so no blow lands on you — aristocrat lifegain) vs THE MARTYR-KING (take the blows on your own life, spare your people — endure / lifegain). Pick one, lock the other. PLUS DECREES OF ORDER: spend Light to enact Laws of the realm you CHOOSE (at a cutscene), accumulating more over the run.",
+      "paths": [
+        {
+          "id": "right_of_rule",
+          "name": "Right of Rule",
+          "tagline": "rule by sacrifice",
+          "entry": "Let lesser subjects die so no blow lands on you — take no face damage, spend creatures freely.",
+          "nodes": [
+            {"id": "expendable", "name": "Expendable", "tier": "1", "group": "Crown", "signal": "won a match in which you lost 3+ of your own creatures but took no damage to the face", "ability": "when a creature you control dies, gain 1 life", "requires": "", "visibility": "hinted"},
+            {"id": "crowns_due", "name": "The crown's due", "tier": "2", "group": "Crown", "signal": "won a match having lost more creatures than your opponent", "ability": "when one of your creatures dies, your next card costs 1 less", "requires": "expendable", "visibility": "secret"},
+            {"id": "bloodline", "name": "Bloodline", "tier": "capstone", "group": "Crown", "signal": "lost 20+ creatures across a run and finished it at full life", "ability": "whenever a creature you control dies, draw a card", "requires": "crowns_due", "visibility": "secret"}
+          ]
+        },
+        {
+          "id": "martyr_king",
+          "name": "The Martyr-King",
+          "tagline": "bear it yourself",
+          "entry": "Take the blows on your own life and let your people stand — take the face damage, don't throw creatures away to block.",
+          "nodes": [
+            {"id": "endure", "name": "Endure", "tier": "1", "group": "Oath", "signal": "won a match in which you took 10+ damage to the face but lost no creatures", "ability": "at the start of your turn, gain 1 life", "requires": "", "visibility": "hinted"},
+            {"id": "long_reign", "name": "The long reign", "tier": "2", "group": "Oath", "signal": "won a match after dropping below 5 life at some point", "ability": "your creatures cost 1 less while you are below half life", "requires": "endure", "visibility": "secret"},
+            {"id": "dawn_eternal", "name": "Dawn eternal", "tier": "capstone", "group": "Oath", "signal": "gained 15+ life in a single match you won", "ability": "once per turn, prevent the first damage dealt to your face", "requires": "long_reign", "visibility": "secret"}
+          ]
+        },
+        {
+          "id": "decrees",
+          "name": "Decrees of Order",
+          "tagline": "hold court",
+          "entry": "Spend Light to enact a Law of the realm — you CHOOSE which, at a cutscene. Come back to enact more; they stack.",
+          "nodes": [
+            {"id": "first_decree", "name": "The first decree", "tier": "1", "group": "Order", "signal": "won a match while Aurelle was on the field", "ability": "unlocks LAWS: spend Light to enact one of the Laws below (chosen at a cutscene). You may enact more over the run.", "requires": "", "visibility": "open"},
+            {"id": "law_singular_assault", "name": "Law: Singular Assault", "tier": "2", "group": "Order", "signal": "won a match in which the enemy attacked you with 4+ creatures", "ability": "LAW — while Aurelle is on the field, only one enemy creature may attack each turn", "requires": "first_decree", "visibility": "open"},
+            {"id": "law_toll_of_war", "name": "Law: Toll of War", "tier": "2", "group": "Order", "signal": "won a match in which you were attacked 5+ times", "ability": "LAW — each enemy creature must spend 1 Light to attack you", "requires": "first_decree", "visibility": "open"},
+            {"id": "law_measured_muster", "name": "Law: Measured Muster", "tier": "2", "group": "Order", "signal": "won a match in which the enemy played 4+ creatures", "ability": "LAW — the enemy may play only one creature per turn", "requires": "first_decree", "visibility": "open"}
+          ]
+        }
+      ]
+    }
+  }
+}
