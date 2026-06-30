@@ -1230,6 +1230,53 @@
           }
         }
       ]
+    },
+    {
+      "art": "card_art/new_card.png",
+      "color": "#4a78c8",
+      "cost": 2,
+      "faction": "lattice",
+      "flavor": "She never gambles. She simply knows which way it falls.",
+      "id": "lioras_gambit",
+      "keywords": [],
+      "name": "Liora's Gambit",
+      "power": 0,
+      "set": "core",
+      "text": "Flip a coin. Heads: draw 2 cards.",
+      "toughness": 0,
+      "type": "spell",
+      "when_to_play": "Cheap card advantage for the Gambler - and a flip toward her tree.",
+      "effect": {
+        "kind": "flip",
+        "onHeads": {
+          "kind": "draw",
+          "amount": 2
+        }
+      }
+    },
+    {
+      "art": "card_art/new_card.png",
+      "color": "#4a78c8",
+      "cost": 2,
+      "faction": "lattice",
+      "flavor": "One chance in four. For Liora, that is plenty.",
+      "id": "long_odds",
+      "keywords": [],
+      "name": "Long Odds",
+      "power": 0,
+      "set": "core",
+      "text": "Roll a die. 1-in-4: deal 6 damage to the enemy.",
+      "toughness": 0,
+      "type": "spell",
+      "when_to_play": "A long shot with the luck tree behind it - the way to beat 1-in-4 odds.",
+      "effect": {
+        "kind": "flip",
+        "odds": 0.25,
+        "onHeads": {
+          "kind": "damage",
+          "amount": 6
+        }
+      }
     }
   ]
 }
