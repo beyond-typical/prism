@@ -1,0 +1,78 @@
+{
+  "templates": {
+    "camp": {
+      "bg": "scenes/camp.png",
+      "music": "calm",
+      "beats": [
+        {
+          "emotion": "neutral",
+          "text": "The fire snaps and settles. {prism} watches the embers a while, then looks to you. \"Early days yet — the ladder ahead won't be gentle. How shall we spend the night?\""
+        }
+      ],
+      "prompt": "How shall we spend the night?",
+      "choices": [
+        {
+          "label": "Share a hot meal",
+          "badge": "+4 life",
+          "emotion": "happy",
+          "effects": [{ "kind": "life", "amount": 4 }],
+          "outcome": "You break bread together and let the warmth settle into your bones. You'll take the field fresh and steady."
+        },
+        {
+          "label": "Drill your champion by firelight",
+          "badge": "+1/+1 champion",
+          "emotion": "neutral",
+          "effects": [{ "kind": "buff", "dp": 1, "dt": 1 }],
+          "outcome": "{prism} runs you through the forms until the motions are second nature. The lesson sticks for good."
+        },
+        {
+          "label": "Recruit a wanderer to your banner",
+          "badge": "Open a recruit pack ▶",
+          "emotion": "happy",
+          "exit": "recruit",
+          "outcome": "A figure drawn by the firelight asks to march with you. Let's see who the road brings."
+        },
+        {
+          "label": "Attune deeper to your Prism",
+          "badge": "+1 max Light",
+          "emotion": "surprised",
+          "effects": [{ "kind": "facet", "amount": 1 }],
+          "outcome": "You sit with {prism} until a new facet opens. The Light pours a little wider — more to spend, every turn ahead."
+        }
+      ]
+    },
+    "rival-brief": {
+      "music": "tension",
+      "beats": [
+        {
+          "emotion": "neutral",
+          "text": "You're going after {rival}. Let me set you up before you march."
+        }
+      ],
+      "prompt": "How will you ready yourself?",
+      "choices": [
+        {
+          "label": "Steel yourself for the rush",
+          "badge": "+5 life",
+          "emotion": "neutral",
+          "effects": [{ "kind": "life", "amount": 5 }],
+          "outcome": "Outlast the first wave and it's yours."
+        },
+        {
+          "label": "Drill the killing edge",
+          "badge": "+2/+0 champion",
+          "emotion": "happy",
+          "effects": [{ "kind": "buff", "dp": 2, "dt": 0 }],
+          "outcome": "All forward, no flinch. Now go hit them first and hit them hard."
+        },
+        {
+          "label": "Recruit an ally to your banner",
+          "badge": "Open a recruit pack ▶",
+          "emotion": "happy",
+          "exit": "recruit",
+          "outcome": "One more blade for the fight ahead. Let's see who answers the call."
+        }
+      ]
+    }
+  }
+}
